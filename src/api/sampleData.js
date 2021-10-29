@@ -18,7 +18,7 @@ export const sampleData = [
         comments: "Tilattu uusi osa"
     },
     {
-        id: '2',
+        id: '3',
         name: 'Billy',
         area: 'Varasto',
         description: "Laite paskana",

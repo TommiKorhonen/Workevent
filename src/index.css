@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-gray-200
+}
+p, td {
+  @apply max-w-prose
+}
 td {
     @apply border border-black
 }
 input, textarea, select {
   @apply border border-gray-400  border-solid p-2 w-full;
+}
+.navbtn {
+  @apply border-2 font-semibold py-2 px-5 rounded-md hover:bg-white hover:text-black;
 }
