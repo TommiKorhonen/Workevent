@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getEvents } from "../eventReducer"
 import moment from "moment";
-import EventsApi from '../../api/EventsApi'
 const EventListItem = () => {
-    const [events, setEvents] = useState([]);
-    const fetchEvents = async () => {
-        try {
-            const response = await EventsApi.get("/");
-            // console.log(response.data.data.events[0].posting_date);
-            setEvents(response.data.data.events)
-        } catch (err) {
-            console.log(err);
-        };
-    };
+    const dispatch = useDispatch()
+    const events = useSelector(state => state.events.event);
     useEffect(() => {
-        fetchEvents();
+        dispatch(getEvents())
     }, [])
     return (
         <article className="grid">
@@ -28,7 +21,7 @@ const EventListItem = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {events.map((event) => {
+                    {events && events.map((event) => {
                         const {
                             id,
                             area,

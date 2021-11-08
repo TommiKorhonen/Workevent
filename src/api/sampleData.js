@@ -19,7 +19,7 @@ export const sampleData = [
     },
     {
         id: '3',
-        name: 'Billy',
+        name: 'Kate',
         area: 'Varasto',
         description: "Laite paskana",
         category: "Huomio",
